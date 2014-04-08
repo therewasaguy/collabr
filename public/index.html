@@ -1,0 +1,64 @@
+<html>
+
+  <head>
+    <title>CollaBoard</title>
+    <script type="text/javascript" src="../js/search.js"/></script>
+    <script type="text/javascript" src="../js/user.js"/></script>    
+  </head>
+
+
+  <body>
+
+    <div id="main">
+
+      <div id="topnav">
+
+        <div id="searchbar">
+          <form action="" method="get">
+            <input type="search" value="" name="query">
+            <input type="button" value="Search" onClick="search(this.form)">
+          </form>
+        </div><!--close searchbar-->
+
+        <div id="userinfo">
+          <input type="button" value="create profile / login" onClick="logIn()">
+        </div>
+
+      </div><!--close topnav-->
+
+      <div id="listing">
+        <h2 id="listHead">List of all discussions</h2>
+        <ul id="posts">
+
+          <li>
+          <div class="qlisth"><a href="#">New to gdb. Try display.</a></div>
+          <div class="qlistf">Edited 2 hours ago by <a href="#">fantasy2099</a></div>
+          </li>
+
+          <li>
+          <div class="qlisth"><a href="#">Sorry for the really dumb question, but do I NEED to run the virtual machine?</a></div>
+          <div class="qlistf">Edited 3 hours ago by <a href="#">chelleomi</a></div>
+          </li>
+
+          <li>
+          <div class="qlisth"><a href="#">Pset 5 problems with biSizeImage</a></div>
+          <div class="qlistf">Edited 7 hours ago by <a href="#">ammurp</a></div>
+          </li>
+
+        </ul>
+      </div><!--close "listing"-->
+
+      <div id="footnav">
+        <h2>Not finding what you're looking for? New post:</h2>
+        <form action="" method="get">
+          <input type="text" value="What is your question?" name="title"><br>
+          <input type="message" value="Tell us more..." name="body">
+          <input type="button" value="Submit" onClick="newPost(this.form)">
+        </form>
+
+
+    </div><!--close "main"-->
+
+  </body>
+
+</html
