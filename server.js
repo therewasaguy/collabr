@@ -1,7 +1,7 @@
-fs = require('fs');
-connect = require('connect');
-u = require('url');
-mime = require('mime');
+var fs = require('fs');
+var connect = require('connect');
+var u = require('url');
+var mime = require('mime');
 
 console.log(__dirname);
 
@@ -12,7 +12,7 @@ var app = connect()
   .use(connect.bodyParser())
   .use(connect.static(__dirname + '/public'))
   .use(function (req, res) {
-    var url = __dirname + req.url;
+    var url = req.url;
 
     if (url){
       fs.readFile(url, function(err, data) {
