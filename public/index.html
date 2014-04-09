@@ -2,9 +2,9 @@
 
   <head>
     <title>CollaBoard</title>
-    <script type="text/javascript" src="js/search.js"/></script>
+<!--     <script type="text/javascript" src="js/search.js"/></script>
     <script type="text/javascript" src="js/user.js"/></script>    
-  </head>
+ -->  </head>
 
 
   <body>
@@ -58,6 +58,46 @@
 
 
     </div><!--close "main"-->
+
+    <footer>
+      <script>
+        var loggedIn = false;
+        var username = 'testuser';
+        console.log('loaded user.js and logged in = ' + loggedIn);
+
+        var logIn = function() {
+          loggedIn = true;
+          console.log("logged in!");
+          var elem = document.getElementById('userinfo');
+          elem.innerHTML = 'Logged in as <a href="#">' + username + '</a>'
+        }
+
+        function search (form) {
+            var sQuery = form.query.value;
+            console.log("You typed " + sQuery);
+            var elem = document.getElementById('listHead');
+            elem.innerHTML='Search results for <em>' +sQuery + "...</em>";
+        }
+
+        function newPost(form) {
+          if (!loggedIn) {
+            alert("Please log in to do that");
+          }
+          else {
+            console.log("submitted form " +form);
+            var postUl = document.getElementById('posts');
+            var newLi = document.createElement("LI");
+            postUl.appendChild(newLi);
+            d = new Date();
+            newLi.innerHTML = '<div class="qlisth"><a href="#">' + form.title.value + '</a></div><div class="qlistf">Today at ' + d.getHours() +':'+ d.getMinutes() +':'+ d.getSeconds() + ' by <a href="#">' + username + '</a></div>';
+          }
+        }
+
+        console.log('loaded search.js');
+
+
+      </script>
+    </footer>
 
   </body>
 
