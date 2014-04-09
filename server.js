@@ -3,8 +3,6 @@ var connect = require('connect');
 var url = require('url');
 var mime = require('mime');
 
-console.log(__dirname);
-
 var port = Number(process.env.PORT || 3000);
 
 
