@@ -1,6 +1,6 @@
 {
-  "name": "forum01",
-  "version": "0.0.0",
+  "name": "collabr",
+  "version": "0.0.1",
   "description": "discussion forum",
   "main": "server.js",
   "scripts": {

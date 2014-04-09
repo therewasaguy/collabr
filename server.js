@@ -30,4 +30,6 @@ var app = connect()
       res.writeHead(402);
       return res.end("Forbidden.");
     }
-  }).listen(port);
+  }).listen(port, function() {
+    console.log("listening on port " + port);
+  });
