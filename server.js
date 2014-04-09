@@ -1,6 +1,7 @@
 fs = require('fs');
 connect = require('connect');
-// require('url');
+u = require('url');
+mime = require('mime');
 
 console.log(__dirname);
 
@@ -15,10 +16,10 @@ var app = connect()
 
     if (url){
       fs.readFile(url, function(err, data) {
-        if (err) {
-          res.writeHead(404);
-          return res.end("File not found.");
-        }
+        // if (err) {
+        //   res.writeHead(404);
+        //   return res.end("File not found.");
+        // }
 
         res.setHeader("Content-Type", mime.lookup(url));
         res.writeHead(200);
