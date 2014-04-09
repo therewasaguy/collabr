@@ -1,5 +1,6 @@
 fs = require('fs');
 connect = require('connect');
+// require('url');
 
 console.log(__dirname);
 
@@ -10,9 +11,9 @@ var app = connect()
   .use(connect.bodyParser())
   .use(connect.static(__dirname + '/public'))
   .use(function (req, res) {
-    var url = convertURL(req.url);
+    var url = req.url;
 
-    if (okURL(url)){
+    if (url){
       fs.readFile(url, function(err, data) {
         if (err) {
           res.writeHead(404);
@@ -28,13 +29,4 @@ var app = connect()
       res.writeHead(402);
       return res.end("Forbidden.");
     }
-
-//    res.end();
-//     if (req.url === '/process') {
-//       res.end(req.body.name + ' would repeat ' + req.body.repeat + ' times.');
-//     } else {
-// //      res.end(req.url+' is not a valid page.');
-//         res.end();
-//     }
-  });
-  // .listen(3000);
+  }).listen(port);
