@@ -11,7 +11,7 @@ var app = connect()
   .use(connect.bodyParser())
   .use(connect.static(__dirname + '/public'))
   .use(function (req, res) {
-    var url = req.url;
+    var url = __dirname + req.url;
 
     if (url){
       fs.readFile(url, function(err, data) {
