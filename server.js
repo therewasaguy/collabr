@@ -1,6 +1,6 @@
 var fs = require('fs');
 var connect = require('connect');
-var u = require('url');
+var url = require('url');
 var mime = require('mime');
 
 console.log(__dirname);
@@ -10,26 +10,20 @@ var port = Number(process.env.PORT || 3000);
 
 var app = connect()
   .use(connect.bodyParser())
-  .use(connect.static(__dirname + '/public'))
+  .use(connect.static(__dirname + '/public/'))
   .use(function (req, res) {
-    var url = req.url;
-
-    if (url){
-      fs.readFile(url, function(err, data) {
+    var u = req.url;
+      fs.readFile(u, function(err, data) {
         if (err) {
           res.writeHead(404);
-          return res.end("File not found.");
+          return res.end(data + "File not found.");
         }
-
-        res.setHeader("Content-Type", mime.lookup(url));
+        res.setHeader("Content-Type", mime.lookup(u));
+        console.log("MIME: " + mime.lookup(u));
         res.writeHead(200);
         res.end(data);
         
       });
-    } else {
-      res.writeHead(402);
-      return res.end("Forbidden.");
-    }
   }).listen(port, function() {
     console.log("listening on port " + port);
   });
