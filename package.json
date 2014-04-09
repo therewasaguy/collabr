@@ -7,10 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "jason",
   "license": "BSD-2-Clause",
   "dependencies": {
     "connect": "~2.14.4"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/therewasaguy/collabr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/therewasaguy/collabr/issues"
+  },
+  "homepage": "https://github.com/therewasaguy/collabr"
 }
